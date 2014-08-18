@@ -1,0 +1,5 @@
+*{margin:0;padding:0;box-sizing:border-box}
+.box{margin:10px;border:2px solid #ff5702;padding:15px;}
+@media screen and (max-width: 43.75em){
+	.box{border: 2px solid #000;color:red;}
+}

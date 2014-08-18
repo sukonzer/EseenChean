@@ -2,25 +2,18 @@
 <html lang="en-US">
 <head>
 	<meta charset="UTF-8">
-	<title>惊涛设计 -- eseenchean</title>
+	<title>knight</title>
 	<link href="css/common.css" rel="stylesheet" type="text/css" />
 	<style type="text/css">
 	html,body{height:100%;}
 	.ie6-cover{position:absolute;width:100%;height:100%;background-color:#000;text-align:center;color:#fff;}
 	.ie6-cover table{width:100%;height:100%;}
-	/*===== slogan =====*/
-	.slogan{margin:150px 0 0 120px;font-size:20px;letter-spacing:.1em;}
 	</style>
 </head>
 <body>
-	<div class="knight-box">
-		<div class="slogan">
-		Art就是那么回事儿 <br />
-		要么温柔的表现 <br />
-		要么不寻常的自傲 <br />
-		我是郑惊涛 <br />
-		我是Art
-		</div>
+	<div class="knight-box"><img src="image/knight.jpg" alt="" /></div>
+	<div class="copywrite">
+		<img src="image/knight_copy.png" alt="" />
 	</div>
 	<div class="logo">驚濤設計</div>
 	<script type="text/javascript" src="js/jquery.js"></script>
@@ -36,6 +29,14 @@
 						'</table></div>';
 		$('body').append(fragment);
 	}else{
+		var setImg = function(){
+			var wd=$(window).width();
+			$('.knight-box').find('img').css({'width':wd,'height':'auto'});
+		}
+		setImg();
+		$(window).resize(function(){
+			setImg();
+		});
 		var Timeout = (window.setTimeout(function(){
 			window.location.href="home.html";
 		},2000))();
