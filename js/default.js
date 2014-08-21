@@ -190,6 +190,7 @@ function decision(e){
 	}
 };
 EventUitl.addHandler(marquee,'mouseenter',function(){
+	(Timer1 && clearInterval(Timer1)) || (Timer2 && clearInterval(Timer2));
 	EventUitl.removeHandler(document.documentElement,'mousemove',decision);
 });
 EventUitl.addHandler(marquee,'mouseleave',function(){
