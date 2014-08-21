@@ -151,10 +151,7 @@ function decision(e){
 	var smallWd = Math.floor(winWd/6);//六等分
 	var topBlk = clientY>0 && clientY<marqTop;
 	var bomBlk = clientY>marqTop+marqHt && clientY<winHt;
-	if(clientY>marqTop && clientY<marqTop+marqHt){
-		(Timer1 && clearInterval(Timer1)) || (Timer2 && clearInterval(Timer2));
-		EventUitl.removeHandler(document.documentElement,'mousemove',decision);
-	}else if(clientX>0 && clientX<smallWd && topBlk){
+	if(clientX>0 && clientX<smallWd && topBlk){
 		(Timer1 && clearInterval(Timer1)) || (Timer2 && clearInterval(Timer2));
 		MarqueeR(1);
 	}else if(clientX>smallWd && clientX<smallWd*2 && topBlk){
@@ -192,7 +189,10 @@ function decision(e){
 		MarqueeL(1);
 	}
 };
-EventUitl.addHandler(marquee,'mouseout',function(){
+EventUitl.addHandler(marquee,'mouseenter',function(){
+	EventUitl.removeHandler(document.documentElement,'mousemove',decision);
+});
+EventUitl.addHandler(marquee,'mouseleave',function(){
 	EventUitl.addHandler(document.documentElement,'mousemove',decision);
 });
 
