@@ -71,7 +71,7 @@ function getKey(e){
 	}
 };
 //=================================================
-// 菜单
+// home菜单
 //=================================================
 $('.main-menu li').find('span').on('click',function(){
 	var $this=$(this);
@@ -105,12 +105,14 @@ $('.main-menu li').find('span').on('click',function(){
 //无缝滚动
 var Timer1 = null,
 	Timer2 = null,
+	winWd = document.documentElement.clientWidth,//窗口宽度
 	winHt = document.documentElement.clientHeight,//窗口高度
 	marquee = G('marquee'),//滚到层对象
 	marqTop = marquee.parentNode.offsetTop,
 	marqHt = marquee.offsetHeight,
 	original = document.getElementById("original"),
 	clone = document.getElementById("clone");
+marquee.style.width = winWd +'px';
 var MarqueeL = function(){
 	var flag = false;
 	if(flag){return;}
@@ -141,7 +143,6 @@ var MarqueeR = function(){
 	Timer2 = setInterval(rolling,speed);
 	flag = true;
 };
-
 EventUitl.addHandler(document.documentElement,'mousemove',decision);
 function decision(e){
 	var e = EventUitl.getEvent(e),
@@ -196,11 +197,16 @@ EventUitl.addHandler(marquee,'mouseenter',function(){
 EventUitl.addHandler(marquee,'mouseleave',function(){
 	EventUitl.addHandler(document.documentElement,'mousemove',decision);
 });
-
+window.onresize = function(){
+	//重写参数值
+	marqTop = marquee.parentNode.offsetTop;
+	winWd = document.documentElement.clientWidth;
+	winHt = document.documentElement.clientHeight;
+	marquee.style.width = winWd +'px';
+};
 //=================================================
-// 秀我
+// showCase
 //=================================================
-$('#marquee').css({'width':$(window).width()});
 //查看产品图
 var fullPic = $('#fullScreen .full-pic').find('img'); //大图对象
 var i=1; //大图尾号
