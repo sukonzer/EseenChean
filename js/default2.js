@@ -7,7 +7,7 @@
  */
 $(function(){
 	//键盘事件
-	var getKey = function(e){ 
+	function getKey(e){ 
 		e = e || window.event; 
 		var keycode = e.which ? e.which : e.keyCode; 
 		if(keycode == 37){ //如果按下方向左键 
@@ -38,19 +38,18 @@ $(function(){
 		} 
 	};*/
 	//无缝滚动
-	/* var MarqueeL=function(id){
+	var MarqueeL=function(id){
 		var container = document.getElementById(id),
 		original = document.getElementById("original"),
 		clone = document.getElementById("clone"),
 		speed = arguments[1] || 10;
 		clone.innerHTML=original.innerHTML;
+		console.log(clone.offsetLeft)
 		var rolling = function(){
 		  if(container.scrollLeft == clone.offsetLeft){
 			container.scrollLeft = 0;
-			console.log(clone.offsetLeft)
 		  }else{
 			container.scrollLeft++;
-			console.log(container.scrollLeft)
 		  }
 		}
 		timer1 = setInterval(rolling,speed);
@@ -64,6 +63,7 @@ $(function(){
 		clone.innerHTML=original.innerHTML;
 		var rolling = function(){
 			if(container.scrollLeft == 0){
+				console.log(clone.offsetLeft)
 				container.scrollLeft = clone.offsetLeft;
 			}else{
 					container.scrollLeft--;
@@ -71,35 +71,6 @@ $(function(){
 		}
 		timer2 = setInterval(rolling,speed);
 		container.onmouseover = function(){clearInterval(timer2)};
-	}  */
-	var Marquee = function(){
-		var direction = null,speed = null,
-			container = $('#marquee'),
-			original = $('#original'),
-			clone = $('#clone');
-			var left = clone.position().left;
-			console.log(left)
-		clone.html(original.html());
-		if(arguments){
-			direction = arguments[0];
-			speed = arguments[1];
-			var rolling = function(){
-				if(direction == 'left'){
-					if(container.scrollLeft() == left){
-						container.scrollLeft(0);
-					}else{
-						container.get(0).scrollLeft++;
-					}
-				}else{
-					if(container.scrollLeft() == 0){
-						container.scrollLeft(offset.left);
-					}else{
-						container.get(0).scrollLeft--;
-					}
-				}
-			}
-			Timer = setInterval(rolling,speed);
-		}
 	}
 	var wh=$(window).height(),
 		wd=$(window).width();
@@ -144,44 +115,44 @@ $(function(){
 	$('.top-event,.bm-event').css({'height':(wh-$('#marquee').find('img').height())/2});
 	$('#t-l-1,#b-l-1').on({
 		'mouseover':function(){
-			Marquee('right',1);
+			MarqueeR('marquee',1);
 		},'mouseout':function(){
-			clearInterval(Timer);
+			clearInterval(timer2);
 		}
 	});
 	$('#t-l-2,#b-l-2').on({
 		'mouseover':function(){
-			Marquee('right',5);
+			MarqueeR('marquee',5);
 		},'mouseout':function(){
-			clearInterval(Timer);
+			clearInterval(timer2);
 		}
 	});
 	$('#t-l-3,#b-l-3').on({
 		'mouseover':function(){
-			Marquee('right',10);
+			MarqueeR('marquee',10);
 		},'mouseout':function(){
-			clearInterval(Timer);
+			clearInterval(timer2);
 		}
 	});
 	$('#t-r-1,#b-r-1').on({
 		'mouseover':function(){
-			Marquee('left',1);
+			MarqueeL('marquee',1);
 		},'mouseout':function(){
-			clearInterval(Timer);
+			clearInterval(timer1);
 		}
 	});
 	$('#t-r-2,#b-r-2').on({
 		'mouseover':function(){
-			Marquee('left',5);
+			MarqueeL('marquee',5);
 		},'mouseout':function(){
-			clearInterval(Timer);
+			clearInterval(timer1);
 		}
 	});
 	$('#t-r-3,#b-r-3').on({
 		'mouseover':function(){
-			Marquee('left',10);
+			MarqueeL('marquee',10);
 		},'mouseout':function(){
-			clearInterval(Timer);
+			clearInterval(timer1);
 		}
 	});
 	//查看产品图
@@ -225,7 +196,7 @@ $(function(){
 	});
 	//关闭全屏图层
 	var fullCloseBtn = $('#fullScreen .full-close').find('a');
-	fullCloseBtn.on('click',function(){ 
+	fullCloseBtn.on('click',function(){
 		$('#fullScreen').hide();
 		$('.brand-box .detail').show();
 		$(document).unbind('keyup',getKey); //去除绑定在document上的keyup

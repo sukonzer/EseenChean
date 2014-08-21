@@ -287,11 +287,12 @@ input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit
  * brand show
  * -------------------------------------------------
 */
-.brand-box .goback{position:absolute;left:120px;top:25%;}
+.brand-box{position:absolute;height:198px;top:50%;margin-top:-99px;width: 100%;}
+.brand-box .goback{position:absolute;left:120px;top:-80px;}
 .brand-box .goback a{display:block;background:url('../image/arrow.gif') no-repeat;width:13px;height:22px;}
-.brand-box .detail{position:absolute;left:138px;bottom:20%;}
+.brand-box .detail{position:absolute;left:138px;bottom:-100px;}
 .brand-box .detail h3{margin-bottom:5px;}
-.brand-box .marquee-box{overflow:hidden;position:absolute;height:198px;top:50%;margin-top:-99px;}
+.brand-box .marquee-box{overflow:hidden;position:absolute;height:198px;}
 .fullwidth-box{float:left;width:1000%;}
 .fullwidth-box a{float:left;}
 .fullwidth-box .original{float:left;}
