@@ -103,8 +103,7 @@ $('.main-menu li').find('span').on('click',function(){
 	}
 });
 //无缝滚动
-var Timer1 = null,
-	Timer2 = null,
+var Timer = null,
 	winWd = document.documentElement.clientWidth,//窗口宽度
 	winHt = document.documentElement.clientHeight,//窗口高度
 	marquee = G('marquee'),//滚到层对象
@@ -114,8 +113,6 @@ var Timer1 = null,
 	clone = document.getElementById("clone");
 marquee.style.width = winWd +'px';
 var MarqueeL = function(){
-	var flag = false;
-	if(flag){return;}
 	speed = arguments[0] || 10;
 	clone.innerHTML=original.innerHTML;
 	var rolling = function(){
@@ -125,12 +122,10 @@ var MarqueeL = function(){
 		marquee.scrollLeft++;
 	  }
 	}
-	Timer1 = setInterval(rolling,speed);
-	flag = true;
+	Timer && clearInterval(Timer);
+	Timer = setInterval(rolling,speed);
 };
 var MarqueeR = function(){
-	var flag = false;
-	if(flag){return;}
 	speed = arguments[0] || 10;
 	clone.innerHTML=original.innerHTML;
 	var rolling = function(){
@@ -140,8 +135,8 @@ var MarqueeR = function(){
 			marquee.scrollLeft--;
 		}
 	}
-	Timer2 = setInterval(rolling,speed);
-	flag = true;
+	Timer && clearInterval(Timer);
+	Timer = setInterval(rolling,speed);
 };
 EventUitl.addHandler(document.documentElement,'mousemove',decision);
 function decision(e){
@@ -153,45 +148,33 @@ function decision(e){
 	var topBlk = clientY>0 && clientY<marqTop;
 	var bomBlk = clientY>marqTop+marqHt && clientY<winHt;
 	if(clientX>0 && clientX<smallWd && topBlk){
-		(Timer1 && clearInterval(Timer1)) || (Timer2 && clearInterval(Timer2));
 		MarqueeR(1);
 	}else if(clientX>smallWd && clientX<smallWd*2 && topBlk){
-		(Timer1 && clearInterval(Timer1)) || (Timer2 && clearInterval(Timer2));
 		MarqueeR(5);
 	}else if(clientX>smallWd*2 && clientX<smallWd*3 && topBlk){
-		(Timer1 && clearInterval(Timer1)) || (Timer2 && clearInterval(Timer2));
 		MarqueeR(10);
 	}else if(clientX>smallWd*3 && clientX<smallWd*4 && topBlk){
-		(Timer1 && clearInterval(Timer1)) || (Timer2 && clearInterval(Timer2));
 		MarqueeL(10);
 	}else if(clientX>smallWd*4 && clientX<smallWd*5 && topBlk){
-		(Timer1 && clearInterval(Timer1)) || (Timer2 && clearInterval(Timer2));
 		MarqueeL(5);
 	}else if(clientX>smallWd*5 && clientX<smallWd*6 && topBlk){
-		(Timer1 && clearInterval(Timer1)) || (Timer2 && clearInterval(Timer2));
 		MarqueeL(1);
 	}else if(clientX>0 && clientX<smallWd && bomBlk){
-		(Timer1 && clearInterval(Timer1)) || (Timer2 && clearInterval(Timer2));
 		MarqueeR(1);
 	}else if(clientX>smallWd && clientX<smallWd*2 && bomBlk){
-		(Timer1 && clearInterval(Timer1)) || (Timer2 && clearInterval(Timer2));
 		MarqueeR(5);
 	}else if(clientX>smallWd*2 && clientX<smallWd*3 && bomBlk){
-		(Timer1 && clearInterval(Timer1)) || (Timer2 && clearInterval(Timer2));
 		MarqueeR(10);
 	}else if(clientX>smallWd*3 && clientX<smallWd*4 && bomBlk){
-		(Timer1 && clearInterval(Timer1)) || (Timer2 && clearInterval(Timer2));
 		MarqueeL(10);
 	}else if(clientX>smallWd*4 && clientX<smallWd*5 && bomBlk){
-		(Timer1 && clearInterval(Timer1)) || (Timer2 && clearInterval(Timer2));
 		MarqueeL(5);
 	}else if(clientX>smallWd*5 && clientX<smallWd*6 && bomBlk){
-		(Timer1 && clearInterval(Timer1)) || (Timer2 && clearInterval(Timer2));
 		MarqueeL(1);
 	}
 };
 EventUitl.addHandler(marquee,'mouseenter',function(){
-	(Timer1 && clearInterval(Timer1)) || (Timer2 && clearInterval(Timer2));
+	Timer && clearInterval(Timer);
 	EventUitl.removeHandler(document.documentElement,'mousemove',decision);
 });
 EventUitl.addHandler(marquee,'mouseleave',function(){
