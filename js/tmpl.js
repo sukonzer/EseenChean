@@ -1,11 +1,7 @@
 ﻿var offline = {},
 	w = window;
 offline.log = function (name, msg) {
-<<<<<<< HEAD
-	var search = decodeURIComponent(location.search.href);
-=======
-	var search = decodeURIComponent(location.href.search);
->>>>>>> newBranch
+	var search = decodeURIComponent(location.search);
 	if (/(?:debug=true)/g.test(search)) offline.config.debug = true;
 	if (!offline.config.debug) return;
 	var b = msg != '' && msg != 'info' && msg != 'warn' && msg != 'log',
