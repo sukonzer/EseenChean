@@ -24,11 +24,12 @@
 	</div>
 	<div class="logo">驚濤設計</div>
 	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/online.js"></script>
 	<script type="text/javascript">
 	//=================================================
     // 首页
     //=================================================
-	if($.browser.version == '6.0'){
+	if(ol.browser.msie && ol.browser.version === '6.0'){
 		$('.knight-box').empty();
 		$('.logo').hide();
 		var fragment = '<div class="ie6-cover"><table>' +
@@ -36,9 +37,9 @@
 						'</table></div>';
 		$('body').append(fragment);
 	}else{
-		var Timeout = (window.setTimeout(function(){
-			window.location.href="home.html";
-		},2000))();
+		setTimeout(function(){
+			location.href="home.html";
+		},2000);
 	}
 	</script>
 </body>

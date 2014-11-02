@@ -302,17 +302,18 @@ input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit
 .bm-event{position:absolute;bottom:0;left:0;width:100%;}
 .mouse-event-box{float:left;height:100%;}
 /*comp popup*/
-.comp{position:absolute;width:500px;height:500px;top:50%;left:50%;margin:-200px 0 0 -250px;visibility:hidden;-webkit-transform: scale(0); transform: scale(0); -webkit-transition: -webkit-box-shadow .2s ease-in-out, -webkit-transform .2s ease-in-out; transition: box-shadow .2s ease-in-out, transform .2s ease-in-out;}
+.comp{position:absolute;width:500px;height:500px;top:50%;left:50%;margin:-250px 0 0 -250px;-webkit-transform: scale(0); transform: scale(0); -webkit-transition: -webkit-box-shadow .2s ease-in-out, -webkit-transform .2s ease-in-out; transition: box-shadow .2s ease-in-out, transform .2s ease-in-out;}
 .s-visible{-webkit-transform: scale(1); transform: scale(1);visibility:visible;}
+.comp .comp-pic{height:375px;}
 .comp .comp-detail{margin-top:20px;}
 .comp .action{position:absolute;right:-22px;top:0;}
 .comp .action i,.comp .action span{display:inline-block;width:22px;height:22px;cursor:pointer;}
 .comp .action i{background:url('../image/unfold.gif') no-repeat;}
 .comp .action span{background:url('../image/close_case.gif') no-repeat;}
 
-.maskbox{position:absolute;width:100%;height:100%;display:none;}
+.maskbox{position:absolute;width:100%;height:100%;}
 /*full screen*/
-.fullscreen{position:absolute;width:100%;height:100%;overflow:hidden;background-color:#000;display:none;}
+.fullscreen{position:absolute;width:100%;height:100%;overflow:hidden;background-color:#000;}
 .fullscreen .full-pic{text-align:center;display:table;width:100%;height:100%;}
 .fullscreen .full-pic span{display:table-cell;vertical-align:middle;}
 .fullscreen .full-close{position:absolute;right:10px;top:10px;}

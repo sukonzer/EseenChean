@@ -1,14 +1,4 @@
-﻿var offline = {},
-	w = window;
-offline.log = function (name, msg) {
-	var search = decodeURIComponent(location.search);
-	if (/(?:debug=true)/g.test(search)) offline.config.debug = true;
-	if (!offline.config.debug) return;
-	var b = msg != '' && msg != 'info' && msg != 'warn' && msg != 'log',
-		errorType = arguments[2] || 'log';
-	w.console && (arguments.length - 1 == 0 && (msg = name, name = new Date().toLocaleString()), arguments.length - 1 == 1 && (b && (name = name, msg = msg) || (!b && (errorType = msg, msg = name, name = new Date().toLocaleString()))), w.console[errorType]('[ ' + name + ' ] ' + msg));
-} 
-var usedRe={
+﻿var usedRe={
 	//tmpl regexp
 	tmplMapString:/[\r\n\'\"\\]/g,
 	tmplCheckVari:/(^|[^\.])\b([a-z_$][\w$]*)/gi,
@@ -367,9 +357,9 @@ $.tmpl={
 		try{
 			var fn=new Function('$data','$opt',fnStr);
 		}catch (errA){
-			offline.log('tmpl._makefn','invalid source');
-			offline.log(errA);
-			$.log('tmpl._makefn',fnStr);
+			ol.log('tmpl._makefn','invalid source');
+			ol.log(errA);
+			ol.log('tmpl._makefn',fnStr);
 			return $.COMMON_DONOTHING;
 		}
 		return fn;
@@ -495,9 +485,9 @@ $.tmpl={
 		try{
 			var fn=new Function('$data','$opt',fnStr);
 		}catch (errA){
-			offline.log('tmpl._makeFnStrict','invalid source');
-			offline.log(errA);
-			$.log('tmpl._makeFnStrict',fnStr);
+			ol.log('tmpl._makeFnStrict','invalid source');
+			ol.log(errA);
+			ol.log('tmpl._makeFnStrict',fnStr);
 			return $.COMMON_DONOTHING;
 		}
 		return fn;
@@ -533,7 +523,7 @@ $.tmpl={
 		try{
 			var str=t.fn(data,opt);
 		}catch(errA){
-			offline.log('tmpl.render',t.fn.toString()/*.slice(0,200)+'...'*/);
+			ol.log('tmpl.render',t.fn.toString()/*.slice(0,200)+'...'*/);
 			return '';
 		}
 		return str;
@@ -549,7 +539,7 @@ $.tmpl={
 		try{
 			var str=t.fnStrict(data,opt);
 		}catch(errA){
-			offline.log('tmpl.renderStrict',t.renderStrict.toString().slice(0,200)+'...');
+			ol.log('tmpl.renderStrict',t.renderStrict.toString().slice(0,200)+'...');
 			return '';
 		}
 		return str;
