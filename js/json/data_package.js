@@ -1,11 +1,10 @@
 var data = [
 	{
 		'comp':'uploadFolder/TJOY/case_comp_TJOY.jpg',
-		'full':{
-			'f1':'uploadFolder/TJOY/case_package_TJOY01.jpg',
-			'f2':'uploadFolder/TJOY/case_package_TJOY02.jpg'
-		},
-		'fPicLen':2,
+		'full':[
+			'uploadFolder/TJOY/case_package_TJOY01.jpg',
+			'uploadFolder/TJOY/case_package_TJOY02.jpg'
+		],
 		'customer':'丁家宜',
 		'agency':'上海西武百創廣告',
 		'creativeDirector':'Penny',
@@ -14,11 +13,10 @@ var data = [
 	},
 	{
 		'comp':'uploadFolder/lion/case_comp_lion_toothpaste.jpg',
-		'full':{
-			'f1':'uploadFolder/lion/case_package_lion_toothpaste01.jpg',
-			'f2':'uploadFolder/lion/case_package_lion_toothpaste02.jpg'
-		},
-		'fPicLen':2,
+		'full':[
+			'uploadFolder/lion/case_package_lion_toothpaste01.jpg',
+			'uploadFolder/lion/case_package_lion_toothpaste02.jpg'
+		],
 		'customer':'日本獅王',
 		'agency':'上海西武百創廣告',
 		'creativeDirector':'Penny',
@@ -27,17 +25,16 @@ var data = [
 	},
 	{
 		'comp':'uploadFolder/xsx_package/case_comp_xsx_package.jpg',
-		'full':{
-			'f1':'uploadFolder/xsx_package/case_package_xsx01.jpg',
-			'f2':'uploadFolder/xsx_package/case_package_xsx02.jpg',
-			'f3':'uploadFolder/xsx_package/case_package_xsx03.jpg',
-			'f4':'uploadFolder/xsx_package/case_package_xsx04.jpg',
-			'f5':'uploadFolder/xsx_package/case_package_xsx05.jpg',
-			'f6':'uploadFolder/xsx_package/case_package_xsx06.jpg',
-			'f7':'uploadFolder/xsx_package/case_package_xsx07.jpg',
-			'f8':'uploadFolder/xsx_package/case_package_xsx08.jpg'
-		},
-		'fPicLen':8,
+		'full':[
+			'uploadFolder/xsx_package/case_package_xsx01.jpg',
+			'uploadFolder/xsx_package/case_package_xsx02.jpg',
+			'uploadFolder/xsx_package/case_package_xsx03.jpg',
+			'uploadFolder/xsx_package/case_package_xsx04.jpg',
+			'uploadFolder/xsx_package/case_package_xsx05.jpg',
+			'uploadFolder/xsx_package/case_package_xsx06.jpg',
+			'uploadFolder/xsx_package/case_package_xsx07.jpg',
+			'uploadFolder/xsx_package/case_package_xsx08.jpg'
+		],
 		'customer':'香尚香',
 		'agency':'上海西武百創廣告',
 		'creativeDirector':'Penny',
@@ -46,11 +43,10 @@ var data = [
 	},
 	{
 		'comp':'uploadFolder/TJOY/case_comp_TJOY.jpg',
-		'full':{
-			'f1':'uploadFolder/TJOY/case_package_TJOY01.jpg',
-			'f2':'uploadFolder/TJOY/case_package_TJOY02.jpg'
-		},
-		'fPicLen':2,
+		'full':[
+			'uploadFolder/TJOY/case_package_TJOY01.jpg',
+			'uploadFolder/TJOY/case_package_TJOY02.jpg'
+		],
 		'customer':'丁家宜',
 		'agency':'上海西武百創廣告',
 		'creativeDirector':'Penny',
@@ -59,11 +55,10 @@ var data = [
 	},
 	{
 		'comp':'uploadFolder/TJOY/case_comp_TJOY.jpg',
-		'full':{
-			'f1':'uploadFolder/TJOY/case_package_TJOY01.jpg',
-			'f2':'uploadFolder/TJOY/case_package_TJOY02.jpg'
-		},
-		'fPicLen':2,
+		'full':[
+			'uploadFolder/TJOY/case_package_TJOY01.jpg',
+			'uploadFolder/TJOY/case_package_TJOY02.jpg'
+		],
 		'customer':'丁家宜',
 		'agency':'上海西武百創廣告',
 		'creativeDirector':'Penny',
@@ -72,11 +67,10 @@ var data = [
 	},
 	{
 		'comp':'uploadFolder/TJOY/case_comp_TJOY.jpg',
-		'full':{
-			'f1':'uploadFolder/TJOY/case_package_TJOY01.jpg',
-			'f2':'uploadFolder/TJOY/case_package_TJOY02.jpg'
-		},
-		'fPicLen':2,
+		'full':[
+			'uploadFolder/TJOY/case_package_TJOY01.jpg',
+			'uploadFolder/TJOY/case_package_TJOY02.jpg'
+		],
 		'customer':'丁家宜',
 		'agency':'上海西武百創廣告',
 		'creativeDirector':'Penny',

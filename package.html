@@ -1,20 +1,11 @@
 <!DOCTYPE HTML>
 <html lang="en-US">
 <head>
-	<base href="http://www.eseenchean.com/" />
 	<meta charset="UTF-8">
 	<title>包裝</title>
 	<link href="css/common.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-	<div class="top-event">
-		<div class="mouse-event-box" id="t-l-1"></div>
-		<div class="mouse-event-box" id="t-l-2"></div>
-		<div class="mouse-event-box" id="t-l-3"></div>
-		<div class="mouse-event-box" id="t-r-3"></div>
-		<div class="mouse-event-box" id="t-r-2"></div>
-		<div class="mouse-event-box" id="t-r-1"></div>
-	</div>
 	<div class="brand-box">
 		<div class="goback"><a href="javascript:history.back();" title="返回上一頁"></a></div>
 		<div class="marquee-box" id="marquee">
@@ -23,9 +14,6 @@
 					<a href="javascript:;"><img src="uploadFolder/TJOY/case_thumbnails_TJOY.jpg" alt="" /></a>
 					<a href="javascript:;"><img src="uploadFolder/lion/case_thumbnails_lion_toothpaste.jpg" alt="" /></a>
 					<a href="javascript:;"><img src="uploadFolder/xsx_package/case_thumbnails_xsx_package.jpg" alt="" /></a>
-					<a href="javascript:;"><img src="uploadFolder/TJOY/case_thumbnails_TJOY.jpg" alt="" /></a>
-					<a href="javascript:;"><img src="uploadFolder/TJOY/case_thumbnails_TJOY.jpg" alt="" /></a>
-					<a href="javascript:;"><img src="uploadFolder/TJOY/case_thumbnails_TJOY.jpg" alt="" /></a>
 				</div>
 				<div class="clone" id="clone"></div>
 			</div>
@@ -36,33 +24,32 @@
 			<p>時間:2010--</p>
 		</div>
 	</div>
-	<div class="bm-event">
-		<div class="mouse-event-box" id="b-l-1"></div>
-		<div class="mouse-event-box" id="b-l-2"></div>
-		<div class="mouse-event-box" id="b-l-3"></div>
-		<div class="mouse-event-box" id="b-r-3"></div>
-		<div class="mouse-event-box" id="b-r-2"></div>
-		<div class="mouse-event-box" id="b-r-1"></div>
-	</div>
-	<div class="maskbox" id="maskBox"></div>
+	<script id="compTmpl" type="text/brand-tmpl">
 	<div class="comp" id="comp">
 		<div class="action"><i title="全屏查看"></i><span title="關閉"></span></div>
-		<div class="comp-pic"><img src="" alt="" /></div>
+		<div class="comp-pic"><img src="${comp}" alt="" /></div>
 		<div class="comp-detail">
-		<p>客户:<span id="customer"></span></p>
-		<p>广告公司:<span id="agency"></span></p>
-		<p>创意总监:<span id="creativeDirector"></span></p>
-		<p>美术:<span id="artDirector"></span></p>
-		<p>时间:<span id="workTime"></span></p>
+			<p>客户:${customer}</p>
+			<p>广告公司:${agency}</p>
+			<p>创意总监:${creativeDirector}</p>
+			<p>美术:${artDirector}</p>
+			<p>时间:${workTime}</p>
 		</div>
 	</div>
+	</script>
+	<script id="fullTmpl" type="text/brand-tmpl">
 	<div class="fullscreen" id="fullScreen">
 		<div class="full-close"><a href="javascript:;" title="關閉"></a></div>
-		<div class="full-pic"><span><img src="" alt="" /></span></div>
-		<div class="action"><a href="javascript:;" title="上一張" class="prev" id="prev"></a><span class="page-num" id="pageNum"><i></i>/<em></em></span><a href="javascript:;" title="下一張" class="next" id="next"></a></div>
+		<div class="full-pic"><span><img src="${full[0]}" alt="" /></span></div>
+		{{if full.length >1}}
+		<div class="action"><a href="javascript:;" title="上一張" class="prev" id="prev" style="visibility:hidden;"></a><span class="page-num" id="pageNum"><i>1</i>/<em>${full.length}</em></span><a href="javascript:;" title="下一張" class="next" id="next"></a></div>
+		{{/if}}
 	</div>
+	</script>
 	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/online.js"></script>
+	<script type="text/javascript" src="js/package/tmpl.js"></script>
 	<script type="text/javascript" src="js/json/data_package.js"></script>
-	<script type="text/javascript" src="js/default.js"></script>
+	<script type="text/javascript" src="js/package/default.js"></script>
 </body>
 </html>

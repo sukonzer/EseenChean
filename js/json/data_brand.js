@@ -1,17 +1,16 @@
 var data = [
 	{
 		'comp':'uploadFolder/familyfood/case_comp_Fyd.jpg',
-		'full':{
-			'f1':'uploadFolder/familyfood/case_brand_Fyd01.jpg',
-			'f2':'uploadFolder/familyfood/case_brand_Fyd02.jpg',
-			'f3':'uploadFolder/familyfood/case_brand_Fyd03.jpg',
-			'f4':'uploadFolder/familyfood/case_brand_Fyd04.jpg',
-			'f5':'uploadFolder/familyfood/case_brand_Fyd05.jpg',
-			'f6':'uploadFolder/familyfood/case_brand_Fyd06.jpg',
-			'f7':'uploadFolder/familyfood/case_brand_Fyd07.jpg',
-			'f8':'uploadFolder/familyfood/case_brand_Fyd08.jpg'
-		},
-		'fPicLen':8,
+		'full':[
+			'uploadFolder/familyfood/case_brand_Fyd01.jpg',
+			'uploadFolder/familyfood/case_brand_Fyd02.jpg',
+			'uploadFolder/familyfood/case_brand_Fyd03.jpg',
+			'uploadFolder/familyfood/case_brand_Fyd04.jpg',
+			'uploadFolder/familyfood/case_brand_Fyd05.jpg',
+			'uploadFolder/familyfood/case_brand_Fyd06.jpg',
+			'uploadFolder/familyfood/case_brand_Fyd07.jpg',
+			'uploadFolder/familyfood/case_brand_Fyd08.jpg'
+		],
 		'customer':'豐予德餐飲',
 		'agency':'上海西武百創廣告',
 		'creativeDirector':'Penny',
@@ -20,14 +19,13 @@ var data = [
 	},
 	{
 		'comp':'uploadFolder/xsx/case_comp_xsx.jpg',
-		'full':{
-			'f1':'uploadFolder/xsx/case_brand_xsx01.jpg',
-			'f2':'uploadFolder/xsx/case_brand_xsx02.jpg',
-			'f3':'uploadFolder/xsx/case_brand_xsx03.jpg',
-			'f4':'uploadFolder/xsx/case_brand_xsx04.jpg',
-			'f5':'uploadFolder/xsx/case_brand_xsx05.jpg'
-		},
-		'fPicLen':5,
+		'full':[
+			'uploadFolder/xsx/case_brand_xsx01.jpg',
+			'uploadFolder/xsx/case_brand_xsx02.jpg',
+			'uploadFolder/xsx/case_brand_xsx03.jpg',
+			'uploadFolder/xsx/case_brand_xsx04.jpg',
+			'uploadFolder/xsx/case_brand_xsx05.jpg'
+		],
 		'customer':'香尚香',
 		'agency':'上海西武百創廣告',
 		'creativeDirector':'Penny',
@@ -36,13 +34,12 @@ var data = [
 	},
 	{
 		'comp':'uploadFolder/pensun/case_comp_pensun.jpg',
-		'full':{
-			'f1':'uploadFolder/pensun/case_brand_pensun01.jpg',
-			'f2':'uploadFolder/pensun/case_brand_pensun02.jpg',
-			'f3':'uploadFolder/pensun/case_brand_pensun03.jpg',
-			'f4':'uploadFolder/pensun/case_brand_pensun04.jpg'
-		},
-		'fPicLen':4,
+		'full':[
+			'uploadFolder/pensun/case_brand_pensun01.jpg',
+			'uploadFolder/pensun/case_brand_pensun02.jpg',
+			'uploadFolder/pensun/case_brand_pensun03.jpg',
+			'uploadFolder/pensun/case_brand_pensun04.jpg'
+		],
 		'customer':'派森教育培訓機構',
 		'agency':'--',
 		'creativeDirector':'Eseen',
@@ -51,12 +48,11 @@ var data = [
 	},
 	{
 		'comp':'uploadFolder/citibank_Feedback/case_comp_citibank_Feedback.jpg',
-		'full':{
-			'f1':'uploadFolder/citibank_Feedback/case_brand_citibnak_web.jpg',
-			'f2':'uploadFolder/citibank_Feedback/case_brand_citibank_poster.jpg',
-			'f3':'uploadFolder/citibank_Feedback/case_brand_citibank_print.jpg'
-		},
-		'fPicLen':3,
+		'full':[
+			'uploadFolder/citibank_Feedback/case_brand_citibnak_web.jpg',
+			'uploadFolder/citibank_Feedback/case_brand_citibank_poster.jpg',
+			'uploadFolder/citibank_Feedback/case_brand_citibank_print.jpg'
+		],
 		'customer':'花旗銀行(中國)',
 		'agency':'上海西武百創廣告',
 		'creativeDirector':'Penny',
@@ -65,11 +61,10 @@ var data = [
 	},
 	{
 		'comp':'uploadFolder/Pehchaolin/case_comp_Pehchaolin.jpg',
-		'full':{
-			'f1':'uploadFolder/Pehchaolin/case_brand_Pehchaolin01.jpg',
-			'f2':'uploadFolder/Pehchaolin/case_brand_Pehchaolin02.jpg'
-		},
-		'fPicLen':2,
+		'full':[
+			'uploadFolder/Pehchaolin/case_brand_Pehchaolin01.jpg',
+			'uploadFolder/Pehchaolin/case_brand_Pehchaolin02.jpg'
+		],
 		'customer':'百雀羚',
 		'agency':'上海西武百創廣告',
 		'creativeDirector':'Penny',
@@ -78,14 +73,13 @@ var data = [
 	},
 	{
 		'comp':'uploadFolder/Tea/case_comp_Tea.jpg',
-		'full':{
-			'f1':'uploadFolder/Tea/case_brand_Tea01.jpg',
-			'f2':'uploadFolder/Tea/case_brand_Tea02.jpg',
-			'f3':'uploadFolder/Tea/case_brand_Tea03.jpg',
-			'f4':'uploadFolder/Tea/case_brand_Tea04.jpg',
-			'f5':'uploadFolder/Tea/case_brand_Tea05.jpg'
-		},
-		'fPicLen':5,
+		'full':[
+			'uploadFolder/Tea/case_brand_Tea01.jpg',
+			'uploadFolder/Tea/case_brand_Tea02.jpg',
+			'uploadFolder/Tea/case_brand_Tea03.jpg',
+			'uploadFolder/Tea/case_brand_Tea04.jpg',
+			'uploadFolder/Tea/case_brand_Tea05.jpg'
+		],
 		'customer':'茶',
 		'agency':'--',
 		'creativeDirector':'--',
@@ -94,15 +88,14 @@ var data = [
 	},
 	{
 		'comp':'uploadFolder/mcd/case_comp_McD.jpg',
-		'full':{
-			'f1':'uploadFolder/mcd/case_brand_McD_01.jpg',
-			'f2':'uploadFolder/mcd/case_brand_McD_02.jpg',
-			'f3':'uploadFolder/mcd/case_brand_McD_03.jpg',
-			'f4':'uploadFolder/mcd/case_brand_McD_04.jpg',
-			'f5':'uploadFolder/mcd/case_brand_McD_05.jpg',
-			'f6':'uploadFolder/mcd/case_brand_McD_06.jpg'
-		},
-		'fPicLen':6,
+		'full':[
+			'uploadFolder/mcd/case_brand_McD_01.jpg',
+			'uploadFolder/mcd/case_brand_McD_02.jpg',
+			'uploadFolder/mcd/case_brand_McD_03.jpg',
+			'uploadFolder/mcd/case_brand_McD_04.jpg',
+			'uploadFolder/mcd/case_brand_McD_05.jpg',
+			'uploadFolder/mcd/case_brand_McD_06.jpg'
+		],
 		'customer':'麦当劳(中国)',
 		'agency':'上海天煜广告',
 		'creativeDirector':'徐建新',
@@ -111,14 +104,13 @@ var data = [
 	},
 	{
 		'comp':'uploadFolder/abbott/case_comp_abbott.jpg',
-		'full':{
-			'f1':'uploadFolder/abbott/similac-KV_1208-01.jpg',
-			'f2':'uploadFolder/abbott/similac-KV-1031-02.jpg',
-			'f3':'uploadFolder/abbott/similac-KV-1031-03.jpg',
-			'f4':'uploadFolder/abbott/similac-KV-1031-04.jpg',
-			'f5':'uploadFolder/abbott/similac-KV-1031-05.jpg'
-		},
-		'fPicLen':5,
+		'full':[
+			'uploadFolder/abbott/similac-KV_1208-01.jpg',
+			'uploadFolder/abbott/similac-KV-1031-02.jpg',
+			'uploadFolder/abbott/similac-KV-1031-03.jpg',
+			'uploadFolder/abbott/similac-KV-1031-04.jpg',
+			'uploadFolder/abbott/similac-KV-1031-05.jpg'
+		],
 		'customer':'麦当劳(中国)',
 		'agency':'上海天煜广告',
 		'creativeDirector':'徐建新',
