@@ -118,7 +118,10 @@ $doc.on('click','#fullScreen>.full-close>a',function(){
 	$('#fullScreen').remove();
 	$('.brand-box .detail').show();
 	$doc.off('keyup',getKey); //去除绑定在document上的keyup
+	//先清除定时器
 	cutoverTimer && clearTimeout(cutoverTimer);
+	//索引重置
+	fullIndex = 0;
 });
 //左右切换图片
 $doc.on('click','#next',function(){ //下一张
