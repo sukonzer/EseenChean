@@ -10,6 +10,8 @@ var $bd = $('body'),
 	$doc = $(document),
 	winWd = $doc.width(),
 	winHt = $doc.height(),
+	scrollTimer = null,//滚屏定时器
+	cutoverTimer = null,//全屏大图切换定时器
 	isScroll = true,//滚屏默认开启
 	fullIndex = 0;//全屏大图索引
 
@@ -49,8 +51,7 @@ $doc.on('click','.main-menu li span',function(){
 // show case
 //=================================================
 //无缝滚动
-var Timer = null,
-	marquee = $('#marquee'),//滚到层对象
+var marquee = $('#marquee'),//滚到层对象
 	marqTop = marquee.parent().offset().top,
 	marqHt = marquee.height(),
 	original = $("#original"),//原始图对象
@@ -66,7 +67,7 @@ function bindScroll(isScroll){
 	if(isScroll){
 		$doc.on('mousemove','html',decision);
 		$doc.on('mouseenter','#marquee',function(){
-			Timer && clearInterval(Timer);
+			scrollTimer && clearInterval(scrollTimer);
 			$doc.off('mousemove','html',decision);
 		});
 		$doc.on('mouseleave','#marquee',function(){
@@ -120,12 +121,18 @@ $doc.on('click','#fullScreen>.full-close>a',function(){
 });
 //左右切换图片
 $doc.on('click','#next',function(){ //下一张
-	fullIndex++;
-	cutover(fullIndex);
+	cutoverTimer && clearTimeout(cutoverTimer);
+	cutoverTimer = setTimeout(function(){
+		fullIndex++;
+		cutover(fullIndex);	
+	},1000);
 });
 $doc.on('click','#prev',function(){ //上一张
-	fullIndex--;
-	cutover(fullIndex);
+	cutoverTimer && clearTimeout(cutoverTimer);
+	cutoverTimer = setTimeout(function(){
+		fullIndex--;
+		cutover(fullIndex);
+	},1000);
 });
 //向左滚
 function MarqueeL(speed){
@@ -138,8 +145,8 @@ function MarqueeL(speed){
 		marquee[0].scrollLeft++;
 	  }
 	}
-	Timer && clearInterval(Timer);
-	Timer = setInterval(rolling,speed);
+	scrollTimer && clearInterval(scrollTimer);
+	scrollTimer = setInterval(rolling,speed);
 };
 //向右滚
 function MarqueeR(speed){
@@ -152,8 +159,8 @@ function MarqueeR(speed){
 			marquee[0].scrollLeft--;
 		}
 	}
-	Timer && clearInterval(Timer);
-	Timer = setInterval(rolling,speed);
+	scrollTimer && clearInterval(scrollTimer);
+	scrollTimer = setInterval(rolling,speed);
 };
 //滚屏handler
 function decision(e){
@@ -192,36 +199,42 @@ function decision(e){
 function getKey(e){ 
 	e = e || window.event; 
 	var keycode = e.which || e.keyCode; 
-	if(keycode == 37){ //如果按下方向左键 
-		if(fullIndex>0){
-			fullIndex--;
-			cutover(fullIndex);
-		}
+	if(keycode === 37){ //如果按下方向左键
+		cutoverTimer && clearTimeout(cutoverTimer);
+		cutoverTimer = setTimeout(function(){
+			if(fullIndex>0){
+				fullIndex--;
+				cutover(fullIndex);
+			}
+		},1000);
+		
 	}
-	if(keycode == 39){ //如果按下方向右键 
-		if(fullIndex<data[idx].full.length-1){
-			fullIndex++;
-			cutover(fullIndex);
-		}
+	if(keycode === 39){ //如果按下方向右键
+		cutoverTimer && clearTimeout(cutoverTimer);
+		cutoverTimer = setTimeout(function(){
+			if(fullIndex<data[idx].full.length-1){
+				fullIndex++;
+				cutover(fullIndex);
+			}
+		},1000);
 	}
-	if(keycode == 27){//按ESC时关闭全屏图
+	if(keycode === 27){//按ESC时关闭全屏图
 		$('.full-close>a').trigger('click');
 	}
 };
 //全屏大图切换函数
-function cutover(n){ 
+function cutover(n){
 	$('.full-pic img').attr({'src':data[idx].full[n]});
 	$('#pageNum').find('i').text(n+1);
-	if(n==data[idx].full.length-1){
+	if(n === data[idx].full.length-1){
 		$('#next').css('visibility','hidden');
 	}else{
 		$('#next').css('visibility','visible');
 	}
-	if(n==0){
+	if(n === 0){
 		$('#prev').css('visibility','hidden');
 	}else{
 		$('#prev').css('visibility','visible');
 	}
 };
-//alert(ol.parseUrl().path)
 })();
