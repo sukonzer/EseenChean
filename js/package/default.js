@@ -118,6 +118,7 @@ $doc.on('click','#fullScreen>.full-close>a',function(){
 	$('#fullScreen').remove();
 	$('.brand-box .detail').show();
 	$doc.off('keyup',getKey); //去除绑定在document上的keyup
+	cutoverTimer && clearTimeout(cutoverTimer);
 });
 //左右切换图片
 $doc.on('click','#next',function(){ //下一张
