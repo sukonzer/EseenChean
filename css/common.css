@@ -238,12 +238,15 @@ input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit
  * -------------------------------------------------
 */
 .logo{position:fixed;right:0;bottom:0;background:url('../image/logo.gif') no-repeat;width:70px;height:20px;text-indent:-9999em;}
-
+/*不支持ie6提示*/
+.ie6-cover{position:absolute;width:100%;height:100%;background-color:#000;text-align:center;color:#fff;}
+.ie6-cover table{width:100%;height:100%;}
 /* -------------------------------------------------
  * index
  * -------------------------------------------------
 */
 .knight-box{position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;}
+.slogan{margin:150px 0 0 120px;font-size:20px;letter-spacing:.1em;}
 .copywrite{position:absolute;right:80px;top:80px;}
 
 /* -------------------------------------------------
@@ -261,7 +264,6 @@ input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit
 .main-menu li .child li a{color:#ffffff;background-color:#776e72;}
 .main-menu li .child li a:hover{background-color:#000000;}
 .main-menu li .child{}
-
 
 /* -------------------------------------------------
  * show_me
@@ -297,10 +299,6 @@ input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit
 .fullwidth-box a{float:left;}
 .fullwidth-box .original{float:left;}
 .fullwidth-box .clone{float:left;}
-/*mouseover*/
-.top-event{position:absolute;top:0;left:0;width:100%;}
-.bm-event{position:absolute;bottom:0;left:0;width:100%;}
-.mouse-event-box{float:left;height:100%;}
 /*comp popup*/
 .comp{position:absolute;width:500px;height:500px;top:50%;left:50%;margin:-250px 0 0 -250px;-webkit-transform: scale(0); transform: scale(0); -webkit-transition: -webkit-box-shadow .2s ease-in-out, -webkit-transform .2s ease-in-out; transition: box-shadow .2s ease-in-out, transform .2s ease-in-out;}
 .s-visible{-webkit-transform: scale(1); transform: scale(1);visibility:visible;}
@@ -310,7 +308,7 @@ input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit
 .comp .action i,.comp .action span{display:inline-block;width:22px;height:22px;cursor:pointer;}
 .comp .action i{background:url('../image/unfold.gif') no-repeat;}
 .comp .action span{background:url('../image/close_case.gif') no-repeat;}
-
+/*maskbox遮罩*/
 .maskbox{position:absolute;width:100%;height:100%;}
 /*full screen*/
 .fullscreen{position:absolute;width:100%;height:100%;overflow:hidden;background-color:#000;}
