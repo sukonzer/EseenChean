@@ -1,4 +1,4 @@
-﻿;(function(w){
+;(function(w){
 	//创建online对象
 	var online = online || {};
 	
@@ -6,9 +6,9 @@
 	online.debug = new RegExp('localhost','i').test(location.host);
 
 	//判断对象类型
-	online.is = function( type,obj ){
-	    var Class = Object.prototype.toString.call(obj).slice(8,-1);
-	    return obj !== undefined && obj !== null && Class === type;
+	online.typeis = function( obj ){
+	    var Class = Object.prototype.toString.call(obj).slice(8,-1).toLocaleLowerCase();
+	    return obj !== undefined && obj !== null && Class;
 	};
 	//扩展方法
 	online.extend = function(){
@@ -19,10 +19,13 @@
 		try{
 			for(var p in source){
 				if(!target.hasOwnProperty(source[p])){
-					if( this.is('Object',target) ){
-						target[p] = source[p];
-					}else if( this.is('Function',target) ){
-						target.prototype[p] = source[p];
+					switch(this.typeis(target)){
+						case 'object':
+							target[p] = source[p];
+							break;
+						case 'function':
+							target.prototype[p] = source[p];
+							break;
 					}
 				}
 			}
@@ -123,7 +126,7 @@
 		browser: (function(){
 			var matched,browser;
 			matched = (function() {
-				ua = navigator.userAgent.toLowerCase();
+				var ua = navigator.userAgent.toLowerCase();
 
 				var match = /(chrome)[ \/]([\w.]+)/.exec( ua ) ||
 					/(webkit)[ \/]([\w.]+)/.exec( ua ) ||
@@ -188,7 +191,7 @@
 		},
 		//判断日期是 (yyyy-mm-dd) 的格式
 		isDate: function(str){
-			if( this.is('String',str) ){
+			if( this.typeis(str) === 'string' ){
 				var arr=str.match(this.reg.isDate);
 				if(arr){
 					var y = this.toInt(arr[1]),m = this.toInt(arr[2])-1,d = this.toInt(arr[3]);
@@ -205,7 +208,7 @@
 		},
 		//判断日期时间是 (yyyy-mm-dd h:m:s.ms) 的格式
 		isDateTime:function(str){
-			if( this.is('String',str) ){
+			if( this.typeis(str) === 'string' ){
 				var arr=str.match(this.reg.isDateTime);
 				if (arr){
 					var y = this.toInt(arr[1]),m = this.toInt(arr[2])-1,d = this.toInt(arr[3]);
