@@ -19,6 +19,7 @@ if(ol.browser.msie && ol.browser.version === '6.0'){
 				'<tr><td>我們不支持落後的IE6瀏覽器，請更新您的瀏覽器後再訪問，謝謝！</td></tr>' +
 				'</table></div>';
 	$bd.append(fragment);
+	$('.ie6-cover').css('height',winHt);
 }
 //=================================================
 // index首页
